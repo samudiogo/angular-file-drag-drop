@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NgFileDragDropConfig } from 'projects/ng-file-drag-drop/src/lib/ng-file-config';
 
 @Component({
   selector: 'app-root',
@@ -8,12 +9,9 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'file-drag-and-drop';
 
-  dragDropConfig = {
-    showList:true,
-    showProgress:true
-  }
+  dragDropConfig = new NgFileDragDropConfig({loadMultiple: false});
 
   getUploadedFiles(files) {
-    console.log('My uploaded files',files)
+    console.log('My uploaded files', files);
   }
 }
